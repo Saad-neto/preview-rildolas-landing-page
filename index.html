@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Evento exclusivo de transformação profissional">
-    <title>Evento Excellence Experience | Inscreva-se</title>
+    <title>Excellence Experience 2025 | Evento Exclusivo</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
@@ -16,12 +16,11 @@
         }
 
         :root {
-            --primary: #1a1f71;
-            --secondary: #4338ca;
-            --accent: #7c3aed;
+            --primary: #6366f1;
+            --secondary: #8b5cf6;
+            --accent: #ec4899;
             --dark: #0f172a;
             --light: #f8fafc;
-            --gray: #64748b;
             --gold: #fbbf24;
         }
 
@@ -44,11 +43,11 @@
             top: 0;
             left: 0;
             right: 0;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(20px);
             z-index: 1000;
             padding: 20px 0;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
 
         .header-content {
@@ -61,527 +60,456 @@
             font-family: 'Playfair Display', serif;
             font-size: 24px;
             font-weight: 900;
-            color: var(--primary);
-            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .cta-btn {
-            background: linear-gradient(135deg, var(--secondary), var(--accent));
+            background: linear-gradient(135deg, var(--accent), var(--secondary));
             color: white;
-            padding: 12px 32px;
+            padding: 14px 32px;
             border-radius: 50px;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(67, 56, 202, 0.3);
+            box-shadow: 0 0 30px rgba(236, 72, 153, 0.4);
             border: none;
             cursor: pointer;
             font-size: 14px;
         }
 
         .cta-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 25px rgba(67, 56, 202, 0.4);
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 0 40px rgba(236, 72, 153, 0.6);
         }
 
-        /* Ticker Banner */
-        .ticker-banner {
-            background: var(--dark);
-            color: white;
-            padding: 12px 0;
-            overflow: hidden;
-            position: fixed;
-            top: 70px;
-            left: 0;
-            right: 0;
-            z-index: 999;
-            border-top: 2px solid var(--gold);
-            border-bottom: 2px solid var(--gold);
-        }
-
-        .ticker-content {
-            display: flex;
-            animation: scroll 20s linear infinite;
-            white-space: nowrap;
-        }
-
-        .ticker-item {
-            display: inline-flex;
-            align-items: center;
-            font-weight: 700;
-            font-size: 14px;
-            letter-spacing: 2px;
-            padding: 0 50px;
-        }
-
-        .ticker-item::before {
-            content: "⭐";
-            margin-right: 15px;
-        }
-
-        @keyframes scroll {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-50%);
-            }
-        }
-
-        /* Hero Section */
+        /* Hero Section with Video Background */
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             position: relative;
-            margin-top: 110px;
-            padding: 80px 20px;
             overflow: hidden;
         }
 
-        .hero::before {
-            content: "";
+        .hero-video {
             position: absolute;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
-            background-size: 50px 50px;
-            animation: float 20s linear infinite;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            z-index: 1;
         }
 
-        @keyframes float {
-            0% {
-                transform: translate(0, 0);
-            }
-            100% {
-                transform: translate(-50px, -50px);
-            }
-        }
-
-        .hero-content {
-            text-align: center;
-            color: white;
-            position: relative;
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg,
+                rgba(99, 102, 241, 0.85) 0%,
+                rgba(139, 92, 246, 0.85) 50%,
+                rgba(236, 72, 153, 0.85) 100%);
             z-index: 2;
         }
 
-        .hero-subtitle {
-            font-size: 14px;
-            font-weight: 600;
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            color: white;
+            padding: 100px 20px 80px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            padding: 10px 30px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 700;
             letter-spacing: 3px;
             text-transform: uppercase;
-            margin-bottom: 20px;
-            opacity: 0.9;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255,255,255,0.3);
         }
 
         .hero-title {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(40px, 8vw, 80px);
+            font-size: clamp(50px, 10vw, 110px);
             font-weight: 900;
-            line-height: 1.1;
+            line-height: 1;
             margin-bottom: 30px;
-            text-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            text-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .hero-description {
-            font-size: clamp(16px, 2vw, 20px);
-            max-width: 700px;
-            margin: 0 auto 40px;
-            opacity: 0.95;
+            font-size: clamp(18px, 2.5vw, 24px);
+            max-width: 800px;
+            margin: 0 auto 50px;
+            font-weight: 300;
             line-height: 1.8;
+            animation: fadeInUp 1s ease-out 0.2s both;
         }
 
         .hero-cta {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
+            gap: 15px;
             background: white;
-            color: var(--primary);
-            padding: 18px 40px;
+            color: var(--dark);
+            padding: 25px 50px;
             border-radius: 50px;
             text-decoration: none;
-            font-weight: 700;
-            font-size: 16px;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            font-weight: 900;
+            font-size: 18px;
+            transition: all 0.4s ease;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            animation: fadeInUp 1s ease-out 0.4s both;
         }
 
         .hero-cta:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 50px rgba(0,0,0,0.3);
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 30px 80px rgba(0,0,0,0.4);
         }
 
-        .hero-info {
-            margin-top: 50px;
+        .hero-stats {
+            margin-top: 80px;
             display: flex;
             justify-content: center;
-            gap: 40px;
+            gap: 60px;
             flex-wrap: wrap;
+            animation: fadeInUp 1s ease-out 0.6s both;
         }
 
-        .info-item {
+        .stat-item {
             text-align: center;
         }
 
-        .info-label {
-            font-size: 12px;
+        .stat-number {
+            font-size: 48px;
+            font-weight: 900;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #fff, #fbbf24);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            font-size: 14px;
             text-transform: uppercase;
             letter-spacing: 2px;
-            opacity: 0.8;
-            margin-bottom: 5px;
+            opacity: 0.9;
         }
 
-        .info-value {
-            font-size: 18px;
-            font-weight: 700;
+        /* Gallery Section */
+        .gallery {
+            padding: 120px 20px;
+            background: var(--dark);
         }
 
-        /* Section Styles */
-        section {
-            padding: 100px 20px;
+        .gallery .section-title {
+            color: white;
         }
 
-        .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(32px, 5vw, 48px);
-            font-weight: 900;
-            text-align: center;
-            margin-bottom: 20px;
-            color: var(--primary);
-        }
-
-        .section-subtitle {
-            text-align: center;
-            font-size: 18px;
-            color: var(--gray);
-            max-width: 700px;
-            margin: 0 auto 60px;
-            line-height: 1.8;
-        }
-
-        /* About Section */
-        .about {
-            background: var(--light);
-        }
-
-        .about-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .about-text {
-            font-size: 18px;
-            line-height: 2;
-            color: var(--dark);
-            margin-bottom: 30px;
-        }
-
-        .highlight {
-            color: var(--accent);
-            font-weight: 700;
-        }
-
-        /* For Who Section */
-        .for-who {
-            background: white;
-        }
-
-        .cards-grid {
+        .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
             margin-top: 60px;
         }
 
-        .card {
-            background: white;
-            padding: 40px;
+        .gallery-item {
+            position: relative;
+            aspect-ratio: 4/3;
+            overflow: hidden;
             border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-            transition: all 0.3s ease;
+            cursor: pointer;
+            transition: all 0.4s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            z-index: 10;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.4s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            padding: 30px;
+            transform: translateY(100%);
+            transition: all 0.4s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-title {
+            color: white;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        /* Feature Cards with Images */
+        .features {
+            padding: 120px 20px;
+            background: linear-gradient(135deg, #f8fafc, #e0e7ff);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            margin-top: 80px;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
             border: 2px solid transparent;
         }
 
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.12);
-            border-color: var(--accent);
+        .feature-card:hover {
+            transform: translateY(-20px);
+            box-shadow: 0 40px 100px rgba(99, 102, 241, 0.2);
+            border-color: var(--primary);
         }
 
-        .card-icon {
+        .feature-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            position: relative;
+        }
+
+        .feature-content {
+            padding: 40px;
+        }
+
+        .feature-icon {
             font-size: 48px;
             margin-bottom: 20px;
         }
 
-        .card-title {
-            font-size: 22px;
-            font-weight: 700;
-            margin-bottom: 15px;
-            color: var(--primary);
-        }
-
-        .card-description {
-            color: var(--gray);
-            line-height: 1.8;
-        }
-
-        /* Benefits Section */
-        .benefits {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-        }
-
-        .benefits .section-title,
-        .benefits .section-subtitle {
-            color: white;
-        }
-
-        .benefits-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .benefit-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-        }
-
-        .benefit-check {
+        .feature-title {
             font-size: 24px;
-            color: var(--gold);
-            flex-shrink: 0;
+            font-weight: 900;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        .benefit-text {
-            font-size: 16px;
-            line-height: 1.6;
-        }
-
-        /* Schedule Section */
-        .schedule {
-            background: var(--light);
-        }
-
-        .schedule-timeline {
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .timeline-item {
-            display: flex;
-            gap: 30px;
-            margin-bottom: 40px;
-            position: relative;
-        }
-
-        .timeline-item::before {
-            content: "";
-            position: absolute;
-            left: 29px;
-            top: 60px;
-            bottom: -40px;
-            width: 2px;
-            background: linear-gradient(to bottom, var(--accent), transparent);
-        }
-
-        .timeline-item:last-child::before {
-            display: none;
-        }
-
-        .timeline-time {
-            font-size: 18px;
-            font-weight: 700;
-            color: white;
-            background: var(--accent);
-            padding: 10px 20px;
-            border-radius: 50px;
-            white-space: nowrap;
-            height: fit-content;
-        }
-
-        .timeline-content {
-            flex: 1;
-        }
-
-        .timeline-title {
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 10px;
-        }
-
-        .timeline-description {
-            color: var(--gray);
+        .feature-description {
+            color: var(--dark);
+            opacity: 0.7;
             line-height: 1.8;
+            font-size: 16px;
         }
 
-        /* Speaker Section */
-        .speaker {
-            background: white;
+        /* Testimonials with Photos */
+        .testimonials {
+            padding: 120px 20px;
+            background: var(--dark);
         }
 
-        .speaker-container {
+        .testimonials .section-title {
+            color: white;
+        }
+
+        .testimonials-grid {
             display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 60px;
-            align-items: center;
-            max-width: 1000px;
-            margin: 0 auto;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 80px;
         }
 
-        .speaker-image {
-            width: 100%;
-            aspect-ratio: 3/4;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            border-radius: 20px;
+        .testimonial-card {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(20px);
+            border-radius: 30px;
+            padding: 40px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.4s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255,255,255,0.08);
+            border-color: var(--accent);
+        }
+
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        .testimonial-avatar {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-size: 80px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
-        }
-
-        .speaker-bio h3 {
             font-size: 32px;
-            font-weight: 900;
-            color: var(--primary);
-            margin-bottom: 10px;
+            flex-shrink: 0;
         }
 
-        .speaker-role {
-            font-size: 16px;
-            color: var(--accent);
-            font-weight: 600;
-            margin-bottom: 30px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .speaker-description {
-            font-size: 16px;
-            line-height: 2;
-            color: var(--gray);
-            margin-bottom: 20px;
-        }
-
-        /* FAQ Section */
-        .faq {
-            background: var(--light);
-        }
-
-        .faq-list {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .faq-item {
-            background: white;
-            border-radius: 15px;
-            margin-bottom: 20px;
-            overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-        }
-
-        .faq-question {
-            padding: 25px 30px;
-            font-size: 18px;
+        .testimonial-info h4 {
+            color: white;
             font-weight: 700;
-            color: var(--primary);
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: all 0.3s ease;
+            margin-bottom: 5px;
         }
 
-        .faq-question:hover {
-            background: var(--light);
+        .testimonial-role {
+            color: var(--gold);
+            font-size: 14px;
         }
 
-        .faq-question::after {
-            content: "+";
-            font-size: 28px;
-            color: var(--accent);
-            transition: transform 0.3s ease;
+        .testimonial-text {
+            color: rgba(255,255,255,0.8);
+            line-height: 1.8;
+            font-style: italic;
         }
 
-        .faq-item.active .faq-question::after {
-            transform: rotate(45deg);
+        .testimonial-stars {
+            color: var(--gold);
+            font-size: 20px;
+            margin-bottom: 15px;
         }
 
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
+        /* Section Titles */
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(36px, 6vw, 64px);
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        .faq-item.active .faq-answer {
-            max-height: 500px;
-        }
-
-        .faq-answer-content {
-            padding: 0 30px 25px;
-            color: var(--gray);
+        .section-subtitle {
+            text-align: center;
+            font-size: 20px;
+            color: var(--dark);
+            opacity: 0.7;
+            max-width: 700px;
+            margin: 0 auto;
             line-height: 1.8;
         }
 
         /* CTA Section */
         .cta-section {
-            background: linear-gradient(135deg, var(--dark), var(--primary));
-            color: white;
+            padding: 150px 20px;
+            background: linear-gradient(135deg,
+                var(--primary) 0%,
+                var(--secondary) 50%,
+                var(--accent) 100%);
             text-align: center;
-            padding: 100px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: "";
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 60px 60px;
+            animation: float 30s linear infinite;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
         }
 
         .cta-section .section-title {
             color: white;
             margin-bottom: 30px;
+            -webkit-text-fill-color: white;
         }
 
         .cta-section .section-subtitle {
-            color: rgba(255,255,255,0.8);
-            margin-bottom: 50px;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 60px;
+            font-size: 22px;
         }
 
         .cta-large {
             display: inline-flex;
             align-items: center;
-            gap: 15px;
+            gap: 20px;
             background: white;
-            color: var(--primary);
-            padding: 25px 60px;
+            color: var(--dark);
+            padding: 30px 70px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 900;
-            font-size: 20px;
-            transition: all 0.3s ease;
-            box-shadow: 0 15px 50px rgba(0,0,0,0.3);
+            font-size: 22px;
+            transition: all 0.4s ease;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
         }
 
         .cta-large:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 40px 100px rgba(0,0,0,0.5);
         }
 
         /* Footer */
         footer {
-            background: var(--dark);
+            background: #000;
             color: white;
-            padding: 40px 20px;
+            padding: 60px 20px;
             text-align: center;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
         }
 
         .watermark {
@@ -592,36 +520,47 @@
             opacity: 0.5;
         }
 
+        /* Animations */
+        @keyframes float {
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            100% {
+                transform: translate(-60px, -60px) rotate(360deg);
+            }
+        }
+
+        /* Scroll Animations */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        .scroll-reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
-            .ticker-banner {
-                top: 68px;
+            .hero-stats {
+                gap: 40px;
             }
 
-            .hero {
-                margin-top: 100px;
+            .stat-number {
+                font-size: 36px;
             }
 
-            .speaker-container {
+            .gallery-grid,
+            .features-grid,
+            .testimonials-grid {
                 grid-template-columns: 1fr;
-                text-align: center;
             }
 
-            .hero-info {
-                gap: 20px;
-            }
-
-            section {
-                padding: 60px 20px;
-            }
-
-            .timeline-item {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            .timeline-item::before {
-                display: none;
+            .cta-large {
+                padding: 25px 40px;
+                font-size: 18px;
             }
         }
     </style>
@@ -632,214 +571,163 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">EXCELLENCE EXPERIENCE</div>
-                <a href="#form" class="cta-btn">Quero me inscrever</a>
+                <a href="#inscricao" class="cta-btn">Inscreva-se Agora</a>
             </div>
         </div>
     </header>
 
-    <!-- Ticker Banner -->
-    <div class="ticker-banner">
-        <div class="ticker-content">
-            <span class="ticker-item">VAGAS LIMITADAS</span>
-            <span class="ticker-item">SELEÇÃO POR APLICAÇÃO</span>
-            <span class="ticker-item">EVENTO EXCLUSIVO</span>
-            <span class="ticker-item">VAGAS LIMITADAS</span>
-            <span class="ticker-item">SELEÇÃO POR APLICAÇÃO</span>
-            <span class="ticker-item">EVENTO EXCLUSIVO</span>
-            <span class="ticker-item">VAGAS LIMITADAS</span>
-            <span class="ticker-item">SELEÇÃO POR APLICAÇÃO</span>
-            <span class="ticker-item">EVENTO EXCLUSIVO</span>
-        </div>
-    </div>
-
-    <!-- Hero Section -->
+    <!-- Hero Section with Video -->
     <section class="hero">
+        <video autoplay muted loop playsinline class="hero-video">
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-people-working-in-a-modern-office-4884-large.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+
         <div class="hero-content">
-            <p class="hero-subtitle">Evento Exclusivo 2025</p>
-            <h1 class="hero-title">Excellence<br>Experience</h1>
+            <div class="hero-badge">✨ Evento Exclusivo 2025</div>
+            <h1 class="hero-title">EXCELLENCE<br>EXPERIENCE</h1>
             <p class="hero-description">
-                Uma experiência transformadora de 2 dias que vai revolucionar sua forma de pensar e agir no mercado. Conexões estratégicas, conhecimento aplicado e networking de alto nível.
+                A experiência mais transformadora para empresários e executivos que buscam resultados extraordinários. 2 dias intensos que vão revolucionar sua forma de pensar e agir.
             </p>
-            <a href="#form" class="hero-cta">
-                <span>Fazer minha aplicação</span>
+            <a href="#inscricao" class="hero-cta">
+                <span>Garantir Minha Vaga</span>
                 <span>→</span>
             </a>
-            <div class="hero-info">
-                <div class="info-item">
-                    <div class="info-label">Data</div>
-                    <div class="info-value">15-16 Março 2025</div>
+
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-number">50</div>
+                    <div class="stat-label">Vagas Limitadas</div>
                 </div>
-                <div class="info-item">
-                    <div class="info-label">Local</div>
-                    <div class="info-value">São Paulo, SP</div>
+                <div class="stat-item">
+                    <div class="stat-number">15-16</div>
+                    <div class="stat-label">Março 2025</div>
                 </div>
-                <div class="info-item">
-                    <div class="info-label">Vagas</div>
-                    <div class="info-value">Apenas 50</div>
+                <div class="stat-item">
+                    <div class="stat-number">2</div>
+                    <div class="stat-label">Dias Intensos</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="about">
+    <!-- Gallery Section -->
+    <section class="gallery scroll-reveal">
         <div class="container">
-            <h2 class="section-title">O que é o Excellence Experience?</h2>
-            <div class="about-content">
-                <p class="about-text">
-                    Este não é apenas mais um evento. É uma <span class="highlight">experiência imersiva</span>
-                    cuidadosamente desenhada para profissionais que buscam o próximo nível de excelência
-                    em suas carreiras e negócios.
-                </p>
-                <p class="about-text">
-                    Durante 2 dias intensos, você terá acesso a <span class="highlight">metodologias exclusivas</span>,
-                    networking estratégico e insights práticos que podem ser aplicados imediatamente
-                    na sua realidade profissional.
-                </p>
-                <p class="about-text">
-                    Não vendemos ingressos. <span class="highlight">Selecionamos participantes</span>
-                    através de um processo de aplicação para garantir que todos os presentes
-                    compartilham o mesmo nível de compromisso com a excelência.
-                </p>
+            <h2 class="section-title">Momentos do Evento</h2>
+
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800" alt="Networking">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">Networking Estratégico</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1591115765373-5207764f72e7?w=800" alt="Palestras">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">Palestras Impactantes</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1560439514-4e9645039924?w=800" alt="Workshop">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">Workshops Práticos</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=800" alt="Conexões">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">Conexões de Alto Nível</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800" alt="Ambiente">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">Ambiente Exclusivo</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=800" alt="Experiência">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">Experiência Única</div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- For Who Section -->
-    <section class="for-who">
+    <!-- Features with Images -->
+    <section class="features scroll-reveal">
         <div class="container">
-            <h2 class="section-title">Para quem é este evento?</h2>
+            <h2 class="section-title">O Que Você Vai Experienciar</h2>
             <p class="section-subtitle">
-                Este evento foi desenhado especificamente para profissionais que querem ir além do convencional
+                Cada detalhe foi pensado para gerar transformação real e resultados mensuráveis
             </p>
-            <div class="cards-grid">
-                <div class="card">
-                    <div class="card-icon">💼</div>
-                    <h3 class="card-title">Empresários</h3>
-                    <p class="card-description">
-                        Que buscam estratégias comprovadas para escalar seus negócios e construir empresas sustentáveis e lucrativas.
-                    </p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">🚀</div>
-                    <h3 class="card-title">Executivos</h3>
-                    <p class="card-description">
-                        Profissionais de alta performance que desejam acelerar suas carreiras e expandir sua rede de contatos estratégicos.
-                    </p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">📈</div>
-                    <h3 class="card-title">Gestores</h3>
-                    <p class="card-description">
-                        Líderes que querem desenvolver habilidades de gestão de pessoas e processos para resultados extraordinários.
-                    </p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">💡</div>
-                    <h3 class="card-title">Empreendedores</h3>
-                    <p class="card-description">
-                        Visionários que estão construindo o futuro e precisam de insights práticos para transformar ideias em realidade.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Benefits Section -->
-    <section class="benefits">
-        <div class="container">
-            <h2 class="section-title">O que você vai experienciar</h2>
-            <p class="section-subtitle">
-                Cada elemento deste evento foi pensado para gerar transformação real e duradoura
-            </p>
-            <div class="benefits-list">
-                <div class="benefit-item">
-                    <span class="benefit-check">✓</span>
-                    <span class="benefit-text">Metodologias exclusivas aplicadas por especialistas do mercado</span>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800" class="feature-image" alt="Mentorias">
+                    <div class="feature-content">
+                        <div class="feature-icon">🎯</div>
+                        <h3 class="feature-title">Mentorias Exclusivas</h3>
+                        <p class="feature-description">
+                            Sessões personalizadas com especialistas de mercado para acelerar seus resultados e resolver seus desafios específicos.
+                        </p>
+                    </div>
                 </div>
-                <div class="benefit-item">
-                    <span class="benefit-check">✓</span>
-                    <span class="benefit-text">Networking estratégico com profissionais de alto nível</span>
-                </div>
-                <div class="benefit-item">
-                    <span class="benefit-check">✓</span>
-                    <span class="benefit-text">Cases reais de sucesso e fracasso para acelerar seu aprendizado</span>
-                </div>
-                <div class="benefit-item">
-                    <span class="benefit-check">✓</span>
-                    <span class="benefit-text">Workbooks e materiais exclusivos para aplicação imediata</span>
-                </div>
-                <div class="benefit-item">
-                    <span class="benefit-check">✓</span>
-                    <span class="benefit-text">Sessões de mentoria em grupo para dúvidas específicas</span>
-                </div>
-                <div class="benefit-item">
-                    <span class="benefit-check">✓</span>
-                    <span class="benefit-text">Acesso a comunidade exclusiva de participantes</span>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Schedule Section -->
-    <section class="schedule">
-        <div class="container">
-            <h2 class="section-title">Programação</h2>
-            <p class="section-subtitle">
-                Dois dias intensos de imersão, aprendizado e networking
-            </p>
-            <div class="schedule-timeline">
-                <div class="timeline-item">
-                    <div class="timeline-time">09:00</div>
-                    <div class="timeline-content">
-                        <h3 class="timeline-title">Credenciamento & Welcome Coffee</h3>
-                        <p class="timeline-description">
-                            Chegada dos participantes, networking inicial e entrega de materiais exclusivos.
+                <div class="feature-card">
+                    <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800" class="feature-image" alt="Networking">
+                    <div class="feature-content">
+                        <div class="feature-icon">🤝</div>
+                        <h3 class="feature-title">Networking Premium</h3>
+                        <p class="feature-description">
+                            Conecte-se com empresários e executivos de alto nível. Parcerias estratégicas que vão além do evento.
                         </p>
                     </div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-time">10:00</div>
-                    <div class="timeline-content">
-                        <h3 class="timeline-title">Abertura & Mindset de Excelência</h3>
-                        <p class="timeline-description">
-                            Fundamentos para construir uma mentalidade de alto desempenho e resultados extraordinários.
+
+                <div class="feature-card">
+                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800" class="feature-image" alt="Estratégias">
+                    <div class="feature-content">
+                        <div class="feature-icon">📊</div>
+                        <h3 class="feature-title">Estratégias Práticas</h3>
+                        <p class="feature-description">
+                            Metodologias comprovadas e cases reais de sucesso que você pode aplicar imediatamente no seu negócio.
                         </p>
                     </div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-time">12:30</div>
-                    <div class="timeline-content">
-                        <h3 class="timeline-title">Networking Lunch</h3>
-                        <p class="timeline-description">
-                            Almoço em ambiente exclusivo com oportunidades de conexões estratégicas.
+
+                <div class="feature-card">
+                    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800" class="feature-image" alt="Workshops">
+                    <div class="feature-content">
+                        <div class="feature-icon">⚡</div>
+                        <h3 class="feature-title">Workshops Hands-On</h3>
+                        <p class="feature-description">
+                            Sessões práticas onde você vai construir seu plano de ação personalizado com apoio de especialistas.
                         </p>
                     </div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-time">14:00</div>
-                    <div class="timeline-content">
-                        <h3 class="timeline-title">Estratégias de Crescimento</h3>
-                        <p class="timeline-description">
-                            Metodologias comprovadas para escalar negócios e carreiras de forma sustentável.
+
+                <div class="feature-card">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800" class="feature-image" alt="Comunidade">
+                    <div class="feature-content">
+                        <div class="feature-icon">🌟</div>
+                        <h3 class="feature-title">Comunidade Vitalícia</h3>
+                        <p class="feature-description">
+                            Acesso permanente a uma rede exclusiva de participantes para trocar experiências e oportunidades.
                         </p>
                     </div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-time">16:30</div>
-                    <div class="timeline-content">
-                        <h3 class="timeline-title">Workshop Prático</h3>
-                        <p class="timeline-description">
-                            Aplicação hands-on das estratégias apresentadas no seu contexto profissional.
-                        </p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-time">18:30</div>
-                    <div class="timeline-content">
-                        <h3 class="timeline-title">Encerramento Dia 1</h3>
-                        <p class="timeline-description">
-                            Recap do dia e preparação para o segundo dia de imersão.
+
+                <div class="feature-card">
+                    <img src="https://images.unsplash.com/photo-1553028826-f4804a6dba3b?w=800" class="feature-image" alt="Materiais">
+                    <div class="feature-content">
+                        <div class="feature-icon">📚</div>
+                        <h3 class="feature-title">Materiais Exclusivos</h3>
+                        <p class="feature-description">
+                            Workbooks, templates e frameworks desenvolvidos especialmente para maximizar sua implementação.
                         </p>
                     </div>
                 </div>
@@ -847,113 +735,77 @@
         </div>
     </section>
 
-    <!-- Speaker Section -->
-    <section class="speaker">
+    <!-- Testimonials -->
+    <section class="testimonials scroll-reveal">
         <div class="container">
-            <h2 class="section-title">Quem vai guiar sua jornada</h2>
-            <div class="speaker-container">
-                <div class="speaker-image">
-                    👤
-                </div>
-                <div class="speaker-bio">
-                    <h3>Dr. Alexandre Silva</h3>
-                    <p class="speaker-role">Mentor de Alto Desempenho</p>
-                    <p class="speaker-description">
-                        Com mais de 20 anos de experiência em desenvolvimento de negócios e liderança,
-                        Dr. Alexandre já orientou mais de 500 executivos e empresários na jornada
-                        rumo à excelência profissional.
-                    </p>
-                    <p class="speaker-description">
-                        Autor de 3 best-sellers e palestrante internacional, ele combina expertise
-                        técnica com uma abordagem prática e humanizada, focada em resultados reais
-                        e transformação sustentável.
-                    </p>
-                    <p class="speaker-description">
-                        Sua metodologia exclusiva já ajudou empresas a crescerem mais de 300% e
-                        profissionais a alcançarem posições de liderança em grandes corporações.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
+            <h2 class="section-title">O Que Dizem os Participantes</h2>
 
-    <!-- FAQ Section -->
-    <section class="faq">
-        <div class="container">
-            <h2 class="section-title">Perguntas Frequentes</h2>
-            <div class="faq-list">
-                <div class="faq-item">
-                    <div class="faq-question">Como funciona o processo de seleção?</div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            Você preenche o formulário de aplicação com suas informações profissionais
-                            e objetivos. Nossa equipe analisa cada aplicação individualmente e retorna
-                            em até 48 horas com a confirmação ou não da sua participação.
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">👨</div>
+                        <div class="testimonial-info">
+                            <h4>Carlos Mendes</h4>
+                            <div class="testimonial-role">CEO | Tech Solutions</div>
                         </div>
                     </div>
+                    <p class="testimonial-text">
+                        "O Excellence Experience superou todas as minhas expectativas. Em 2 dias aprendi mais do que em anos de tentativa e erro. Meu faturamento cresceu 280% após implementar as estratégias."
+                    </p>
                 </div>
-                <div class="faq-item">
-                    <div class="faq-question">Qual o investimento para participar?</div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            O investimento varia de acordo com o perfil do participante e momento da inscrição.
-                            Após aprovação da sua aplicação, você receberá todas as informações sobre valores
-                            e formas de pagamento disponíveis.
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">👩</div>
+                        <div class="testimonial-info">
+                            <h4>Ana Paula Silva</h4>
+                            <div class="testimonial-role">Diretora de Marketing</div>
                         </div>
                     </div>
+                    <p class="testimonial-text">
+                        "Networking de altíssimo nível! Conheci pessoas incríveis e fechei parcerias que transformaram meu negócio. Investimento que se paga em semanas."
+                    </p>
                 </div>
-                <div class="faq-item">
-                    <div class="faq-question">O que está incluído no evento?</div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            Todas as palestras e workshops, materiais exclusivos (workbooks e guias),
-                            coffee breaks, almoços networking, acesso à comunidade exclusiva de participantes
-                            e certificado de conclusão.
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">👨</div>
+                        <div class="testimonial-info">
+                            <h4>Roberto Almeida</h4>
+                            <div class="testimonial-role">Fundador | StartUp Brazil</div>
                         </div>
                     </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">Existe garantia de satisfação?</div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            Sim! Se nas primeiras 4 horas do evento você sentir que não é o que esperava,
-                            devolvemos 100% do seu investimento, sem perguntas. Nossa missão é gerar
-                            transformação real, não apenas vender ingressos.
-                        </div>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">Posso levar acompanhante?</div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            Cada participante deve fazer sua própria aplicação e ser aprovado individualmente.
-                            Mantemos um padrão de qualidade dos participantes para garantir que todos
-                            aproveitem ao máximo a experiência.
-                        </div>
-                    </div>
+                    <p class="testimonial-text">
+                        "Conteúdo denso, prático e direto ao ponto. Nada de teoria vazia. Sai de lá com plano de ação claro e já implementei 80% em 30 dias. Resultados absurdos!"
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="cta-section" id="form">
-        <div class="container">
-            <h2 class="section-title">Pronto para transformar sua trajetória?</h2>
-            <p class="section-subtitle">
-                Faça sua aplicação agora e dê o primeiro passo rumo à excelência.<br>
-                Vagas limitadas - processo de seleção em andamento.
-            </p>
-            <a href="https://docs.google.com/forms/d/e/EXEMPLO-FORM-ID/viewform" target="_blank" class="cta-large">
-                Fazer minha aplicação agora
-                <span>→</span>
-            </a>
+    <section class="cta-section" id="inscricao">
+        <div class="cta-content">
+            <div class="container">
+                <h2 class="section-title">Pronto Para a Transformação?</h2>
+                <p class="section-subtitle">
+                    Apenas 50 vagas disponíveis. Processo de seleção por aplicação.<br>
+                    Não perca a oportunidade de fazer parte dessa experiência única.
+                </p>
+                <a href="https://docs.google.com/forms/d/e/EXEMPLO-FORM-ID/viewform" target="_blank" class="cta-large">
+                    Fazer Minha Aplicação Agora
+                    <span>→</span>
+                </a>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="footer-content">
+        <div class="container">
             <div class="logo">EXCELLENCE EXPERIENCE</div>
             <p style="margin-top: 20px; opacity: 0.7;">
                 © 2025 Excellence Experience. Todos os direitos reservados.
@@ -965,25 +817,25 @@
     </footer>
 
     <script>
-        // FAQ Accordion
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', () => {
-                const item = question.parentElement;
-                const isActive = item.classList.contains('active');
+        // Scroll Reveal Animation
+        const scrollReveal = () => {
+            const reveals = document.querySelectorAll('.scroll-reveal');
 
-                // Close all items
-                document.querySelectorAll('.faq-item').forEach(faqItem => {
-                    faqItem.classList.remove('active');
-                });
+            reveals.forEach(element => {
+                const windowHeight = window.innerHeight;
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
 
-                // Open clicked item if it wasn't active
-                if (!isActive) {
-                    item.classList.add('active');
+                if (elementTop < windowHeight - elementVisible) {
+                    element.classList.add('active');
                 }
             });
-        });
+        };
 
-        // Smooth scroll for anchor links
+        window.addEventListener('scroll', scrollReveal);
+        scrollReveal(); // Initial check
+
+        // Smooth Scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -997,10 +849,24 @@
             });
         });
 
-        // Duplicate ticker content for seamless loop
-        const tickerContent = document.querySelector('.ticker-content');
-        const tickerHTML = tickerContent.innerHTML;
-        tickerContent.innerHTML = tickerHTML + tickerHTML;
+        // Gallery Lightbox Effect
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            item.addEventListener('click', function() {
+                this.style.position = 'fixed';
+                this.style.top = '50%';
+                this.style.left = '50%';
+                this.style.transform = 'translate(-50%, -50%) scale(1.5)';
+                this.style.zIndex = '9999';
+
+                setTimeout(() => {
+                    this.style.position = '';
+                    this.style.top = '';
+                    this.style.left = '';
+                    this.style.transform = '';
+                    this.style.zIndex = '';
+                }, 2000);
+            });
+        });
     </script>
 </body>
 </html>
