@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Evento exclusivo de transformação profissional">
+    <title>Evento Excellence Experience | Inscreva-se</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1a1f71;
+            --secondary: #4338ca;
+            --accent: #7c3aed;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --gold: #fbbf24;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 20px 0;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 900;
+            color: var(--primary);
+            letter-spacing: -0.5px;
+        }
+
+        .cta-btn {
+            background: linear-gradient(135deg, var(--secondary), var(--accent));
+            color: white;
+            padding: 12px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(67, 56, 202, 0.3);
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(67, 56, 202, 0.4);
+        }
+
+        /* Ticker Banner */
+        .ticker-banner {
+            background: var(--dark);
+            color: white;
+            padding: 12px 0;
+            overflow: hidden;
+            position: fixed;
+            top: 70px;
+            left: 0;
+            right: 0;
+            z-index: 999;
+            border-top: 2px solid var(--gold);
+            border-bottom: 2px solid var(--gold);
+        }
+
+        .ticker-content {
+            display: flex;
+            animation: scroll 20s linear infinite;
+            white-space: nowrap;
+        }
+
+        .ticker-item {
+            display: inline-flex;
+            align-items: center;
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: 2px;
+            padding: 0 50px;
+        }
+
+        .ticker-item::before {
+            content: "⭐";
+            margin-right: 15px;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            margin-top: 110px;
+            padding: 80px 20px;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: float 20s linear infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translate(0, 0);
+            }
+            100% {
+                transform: translate(-50px, -50px);
+            }
+        }
+
+        .hero-content {
+            text-align: center;
+            color: white;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-subtitle {
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(40px, 8vw, 80px);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 30px;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+
+        .hero-description {
+            font-size: clamp(16px, 2vw, 20px);
+            max-width: 700px;
+            margin: 0 auto 40px;
+            opacity: 0.95;
+            line-height: 1.8;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: white;
+            color: var(--primary);
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.3);
+        }
+
+        .hero-info {
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .info-item {
+            text-align: center;
+        }
+
+        .info-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.8;
+            margin-bottom: 5px;
+        }
+
+        .info-value {
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 100px 20px;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 18px;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto 60px;
+            line-height: 1.8;
+        }
+
+        /* About Section */
+        .about {
+            background: var(--light);
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-text {
+            font-size: 18px;
+            line-height: 2;
+            color: var(--dark);
+            margin-bottom: 30px;
+        }
+
+        .highlight {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        /* For Who Section */
+        .for-who {
+            background: white;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+            border-color: var(--accent);
+        }
+
+        .card-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .card-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .card-description {
+            color: var(--gray);
+            line-height: 1.8;
+        }
+
+        /* Benefits Section */
+        .benefits {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+        }
+
+        .benefits .section-title,
+        .benefits .section-subtitle {
+            color: white;
+        }
+
+        .benefits-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .benefit-check {
+            font-size: 24px;
+            color: var(--gold);
+            flex-shrink: 0;
+        }
+
+        .benefit-text {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* Schedule Section */
+        .schedule {
+            background: var(--light);
+        }
+
+        .schedule-timeline {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: 29px;
+            top: 60px;
+            bottom: -40px;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--accent), transparent);
+        }
+
+        .timeline-item:last-child::before {
+            display: none;
+        }
+
+        .timeline-time {
+            font-size: 18px;
+            font-weight: 700;
+            color: white;
+            background: var(--accent);
+            padding: 10px 20px;
+            border-radius: 50px;
+            white-space: nowrap;
+            height: fit-content;
+        }
+
+        .timeline-content {
+            flex: 1;
+        }
+
+        .timeline-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .timeline-description {
+            color: var(--gray);
+            line-height: 1.8;
+        }
+
+        /* Speaker Section */
+        .speaker {
+            background: white;
+        }
+
+        .speaker-container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 60px;
+            align-items: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .speaker-image {
+            width: 100%;
+            aspect-ratio: 3/4;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 80px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .speaker-bio h3 {
+            font-size: 32px;
+            font-weight: 900;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .speaker-role {
+            font-size: 16px;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .speaker-description {
+            font-size: 16px;
+            line-height: 2;
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+
+        /* FAQ Section */
+        .faq {
+            background: var(--light);
+        }
+
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .faq-question {
+            padding: 25px 30px;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: var(--light);
+        }
+
+        .faq-question::after {
+            content: "+";
+            font-size: 28px;
+            color: var(--accent);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-question::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+
+        .faq-answer-content {
+            padding: 0 30px 25px;
+            color: var(--gray);
+            line-height: 1.8;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--dark), var(--primary));
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .cta-section .section-title {
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        .cta-section .section-subtitle {
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 50px;
+        }
+
+        .cta-large {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            background: white;
+            color: var(--primary);
+            padding: 25px 60px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 900;
+            font-size: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.3);
+        }
+
+        .cta-large:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .watermark {
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 12px;
+            opacity: 0.5;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .ticker-banner {
+                top: 68px;
+            }
+
+            .hero {
+                margin-top: 100px;
+            }
+
+            .speaker-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-info {
+                gap: 20px;
+            }
+
+            section {
+                padding: 60px 20px;
+            }
+
+            .timeline-item {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .timeline-item::before {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">EXCELLENCE EXPERIENCE</div>
+                <a href="#form" class="cta-btn">Quero me inscrever</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Ticker Banner -->
+    <div class="ticker-banner">
+        <div class="ticker-content">
+            <span class="ticker-item">VAGAS LIMITADAS</span>
+            <span class="ticker-item">SELEÇÃO POR APLICAÇÃO</span>
+            <span class="ticker-item">EVENTO EXCLUSIVO</span>
+            <span class="ticker-item">VAGAS LIMITADAS</span>
+            <span class="ticker-item">SELEÇÃO POR APLICAÇÃO</span>
+            <span class="ticker-item">EVENTO EXCLUSIVO</span>
+            <span class="ticker-item">VAGAS LIMITADAS</span>
+            <span class="ticker-item">SELEÇÃO POR APLICAÇÃO</span>
+            <span class="ticker-item">EVENTO EXCLUSIVO</span>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <p class="hero-subtitle">Evento Exclusivo 2025</p>
+            <h1 class="hero-title">Excellence<br>Experience</h1>
+            <p class="hero-description">
+                Uma experiência transformadora de 2 dias que vai revolucionar sua forma de pensar e agir no mercado. Conexões estratégicas, conhecimento aplicado e networking de alto nível.
+            </p>
+            <a href="#form" class="hero-cta">
+                <span>Fazer minha aplicação</span>
+                <span>→</span>
+            </a>
+            <div class="hero-info">
+                <div class="info-item">
+                    <div class="info-label">Data</div>
+                    <div class="info-value">15-16 Março 2025</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Local</div>
+                    <div class="info-value">São Paulo, SP</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Vagas</div>
+                    <div class="info-value">Apenas 50</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <h2 class="section-title">O que é o Excellence Experience?</h2>
+            <div class="about-content">
+                <p class="about-text">
+                    Este não é apenas mais um evento. É uma <span class="highlight">experiência imersiva</span>
+                    cuidadosamente desenhada para profissionais que buscam o próximo nível de excelência
+                    em suas carreiras e negócios.
+                </p>
+                <p class="about-text">
+                    Durante 2 dias intensos, você terá acesso a <span class="highlight">metodologias exclusivas</span>,
+                    networking estratégico e insights práticos que podem ser aplicados imediatamente
+                    na sua realidade profissional.
+                </p>
+                <p class="about-text">
+                    Não vendemos ingressos. <span class="highlight">Selecionamos participantes</span>
+                    através de um processo de aplicação para garantir que todos os presentes
+                    compartilham o mesmo nível de compromisso com a excelência.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- For Who Section -->
+    <section class="for-who">
+        <div class="container">
+            <h2 class="section-title">Para quem é este evento?</h2>
+            <p class="section-subtitle">
+                Este evento foi desenhado especificamente para profissionais que querem ir além do convencional
+            </p>
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-icon">💼</div>
+                    <h3 class="card-title">Empresários</h3>
+                    <p class="card-description">
+                        Que buscam estratégias comprovadas para escalar seus negócios e construir empresas sustentáveis e lucrativas.
+                    </p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🚀</div>
+                    <h3 class="card-title">Executivos</h3>
+                    <p class="card-description">
+                        Profissionais de alta performance que desejam acelerar suas carreiras e expandir sua rede de contatos estratégicos.
+                    </p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">📈</div>
+                    <h3 class="card-title">Gestores</h3>
+                    <p class="card-description">
+                        Líderes que querem desenvolver habilidades de gestão de pessoas e processos para resultados extraordinários.
+                    </p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">💡</div>
+                    <h3 class="card-title">Empreendedores</h3>
+                    <p class="card-description">
+                        Visionários que estão construindo o futuro e precisam de insights práticos para transformar ideias em realidade.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <div class="container">
+            <h2 class="section-title">O que você vai experienciar</h2>
+            <p class="section-subtitle">
+                Cada elemento deste evento foi pensado para gerar transformação real e duradoura
+            </p>
+            <div class="benefits-list">
+                <div class="benefit-item">
+                    <span class="benefit-check">✓</span>
+                    <span class="benefit-text">Metodologias exclusivas aplicadas por especialistas do mercado</span>
+                </div>
+                <div class="benefit-item">
+                    <span class="benefit-check">✓</span>
+                    <span class="benefit-text">Networking estratégico com profissionais de alto nível</span>
+                </div>
+                <div class="benefit-item">
+                    <span class="benefit-check">✓</span>
+                    <span class="benefit-text">Cases reais de sucesso e fracasso para acelerar seu aprendizado</span>
+                </div>
+                <div class="benefit-item">
+                    <span class="benefit-check">✓</span>
+                    <span class="benefit-text">Workbooks e materiais exclusivos para aplicação imediata</span>
+                </div>
+                <div class="benefit-item">
+                    <span class="benefit-check">✓</span>
+                    <span class="benefit-text">Sessões de mentoria em grupo para dúvidas específicas</span>
+                </div>
+                <div class="benefit-item">
+                    <span class="benefit-check">✓</span>
+                    <span class="benefit-text">Acesso a comunidade exclusiva de participantes</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schedule Section -->
+    <section class="schedule">
+        <div class="container">
+            <h2 class="section-title">Programação</h2>
+            <p class="section-subtitle">
+                Dois dias intensos de imersão, aprendizado e networking
+            </p>
+            <div class="schedule-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-time">09:00</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Credenciamento & Welcome Coffee</h3>
+                        <p class="timeline-description">
+                            Chegada dos participantes, networking inicial e entrega de materiais exclusivos.
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">10:00</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Abertura & Mindset de Excelência</h3>
+                        <p class="timeline-description">
+                            Fundamentos para construir uma mentalidade de alto desempenho e resultados extraordinários.
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">12:30</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Networking Lunch</h3>
+                        <p class="timeline-description">
+                            Almoço em ambiente exclusivo com oportunidades de conexões estratégicas.
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">14:00</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Estratégias de Crescimento</h3>
+                        <p class="timeline-description">
+                            Metodologias comprovadas para escalar negócios e carreiras de forma sustentável.
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">16:30</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Workshop Prático</h3>
+                        <p class="timeline-description">
+                            Aplicação hands-on das estratégias apresentadas no seu contexto profissional.
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">18:30</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Encerramento Dia 1</h3>
+                        <p class="timeline-description">
+                            Recap do dia e preparação para o segundo dia de imersão.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Speaker Section -->
+    <section class="speaker">
+        <div class="container">
+            <h2 class="section-title">Quem vai guiar sua jornada</h2>
+            <div class="speaker-container">
+                <div class="speaker-image">
+                    👤
+                </div>
+                <div class="speaker-bio">
+                    <h3>Dr. Alexandre Silva</h3>
+                    <p class="speaker-role">Mentor de Alto Desempenho</p>
+                    <p class="speaker-description">
+                        Com mais de 20 anos de experiência em desenvolvimento de negócios e liderança,
+                        Dr. Alexandre já orientou mais de 500 executivos e empresários na jornada
+                        rumo à excelência profissional.
+                    </p>
+                    <p class="speaker-description">
+                        Autor de 3 best-sellers e palestrante internacional, ele combina expertise
+                        técnica com uma abordagem prática e humanizada, focada em resultados reais
+                        e transformação sustentável.
+                    </p>
+                    <p class="speaker-description">
+                        Sua metodologia exclusiva já ajudou empresas a crescerem mais de 300% e
+                        profissionais a alcançarem posições de liderança em grandes corporações.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <h2 class="section-title">Perguntas Frequentes</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">Como funciona o processo de seleção?</div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Você preenche o formulário de aplicação com suas informações profissionais
+                            e objetivos. Nossa equipe analisa cada aplicação individualmente e retorna
+                            em até 48 horas com a confirmação ou não da sua participação.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Qual o investimento para participar?</div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            O investimento varia de acordo com o perfil do participante e momento da inscrição.
+                            Após aprovação da sua aplicação, você receberá todas as informações sobre valores
+                            e formas de pagamento disponíveis.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">O que está incluído no evento?</div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Todas as palestras e workshops, materiais exclusivos (workbooks e guias),
+                            coffee breaks, almoços networking, acesso à comunidade exclusiva de participantes
+                            e certificado de conclusão.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Existe garantia de satisfação?</div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Sim! Se nas primeiras 4 horas do evento você sentir que não é o que esperava,
+                            devolvemos 100% do seu investimento, sem perguntas. Nossa missão é gerar
+                            transformação real, não apenas vender ingressos.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Posso levar acompanhante?</div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Cada participante deve fazer sua própria aplicação e ser aprovado individualmente.
+                            Mantemos um padrão de qualidade dos participantes para garantir que todos
+                            aproveitem ao máximo a experiência.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="form">
+        <div class="container">
+            <h2 class="section-title">Pronto para transformar sua trajetória?</h2>
+            <p class="section-subtitle">
+                Faça sua aplicação agora e dê o primeiro passo rumo à excelência.<br>
+                Vagas limitadas - processo de seleção em andamento.
+            </p>
+            <a href="https://docs.google.com/forms/d/e/EXEMPLO-FORM-ID/viewform" target="_blank" class="cta-large">
+                Fazer minha aplicação agora
+                <span>→</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="logo">EXCELLENCE EXPERIENCE</div>
+            <p style="margin-top: 20px; opacity: 0.7;">
+                © 2025 Excellence Experience. Todos os direitos reservados.
+            </p>
+            <div class="watermark">
+                🎨 Preview Demonstrativa - Desenvolvimento Web Profissional
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                const isActive = item.classList.contains('active');
+
+                // Close all items
+                document.querySelectorAll('.faq-item').forEach(faqItem => {
+                    faqItem.classList.remove('active');
+                });
+
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Duplicate ticker content for seamless loop
+        const tickerContent = document.querySelector('.ticker-content');
+        const tickerHTML = tickerContent.innerHTML;
+        tickerContent.innerHTML = tickerHTML + tickerHTML;
+    </script>
+</body>
+</html>
